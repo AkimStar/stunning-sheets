@@ -68,11 +68,11 @@ const MaterialsProducts = () => {
     }
   }, [emblaApi]);
 
-  // Updated with relevant images for sheet metal products and roofing
+  // Updated with better images for sheet metal products and roofing
   const materials = [
     {
       title: "Поцинкована ламарина",
-      imageSrc: "https://images.unsplash.com/photo-1605004670071-b258ef2b179c?q=80&w=1856&auto=format&fit=crop",
+      imageSrc: "https://images.unsplash.com/photo-1591972837276-bed99b7a1566?q=80&w=2000&auto=format&fit=crop",
       delay: 0,
     },
     {
@@ -87,12 +87,12 @@ const MaterialsProducts = () => {
     },
     {
       title: "Неръждаема стомана",
-      imageSrc: "https://images.unsplash.com/photo-1553908839-d4f1cb6c8bd4?q=80&w=2000&auto=format&fit=crop",
+      imageSrc: "https://images.unsplash.com/photo-1570358934836-6802981e481e?q=80&w=2000&auto=format&fit=crop",
       delay: 3,
     },
     {
       title: "Прахово боядисани повърхности",
-      imageSrc: "https://images.unsplash.com/photo-1632441730372-d8607678d52e?q=80&w=2000&auto=format&fit=crop",
+      imageSrc: "https://images.unsplash.com/photo-1583465701507-8fec0bca8826?q=80&w=2000&auto=format&fit=crop",
       delay: 4,
     },
   ];

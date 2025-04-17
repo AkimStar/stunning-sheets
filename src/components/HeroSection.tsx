@@ -23,9 +23,9 @@ const HeroSection = () => {
           loop
           playsInline
           className="object-cover w-full h-full"
-          poster="https://images.unsplash.com/photo-1574607383476-f517128355fc?q=80&w=2000&auto=format&fit=crop"
+          poster="https://images.unsplash.com/photo-1551651653-c5186a1fbba2?q=80&w=2000&auto=format&fit=crop"
         >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-person-soldering-metal-parts-with-sparks-6370-large.mp4" type="video/mp4" />
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-welder-at-work-on-a-metal-rod-23694-large.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* Overlay */}
@@ -69,7 +69,7 @@ const HeroSection = () => {
           >
             <button 
               onClick={scrollToContact}
-              className="glassmorphism inline-flex items-center px-8 py-3 rounded-full text-white hover:bg-white/20 transition-all duration-300 group"
+              className="glassmorphism inline-flex items-center px-8 py-3 rounded-full text-white bg-david-navy/70 hover:bg-david-navy transition-all duration-300 group"
             >
               <span className="mr-2">Свържи се с нас</span>
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

@@ -1,5 +1,6 @@
 
 import { motion } from "framer-motion";
+import Logo from "./Logo";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,7 +25,7 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             className="mb-6 md:mb-0 flex items-center gap-3"
           >
-            <img src="/logo.svg" alt="Дейвид Груп Logo" className="h-10 w-auto" />
+            <Logo />
             <p className="text-white/80">
               Copyright © {currentYear} Дейвид Груп
             </p>

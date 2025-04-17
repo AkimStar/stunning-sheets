@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import { Clock, Mail, Wrench } from "lucide-react";
+import Logo from "./Logo";
 
 const LocationSection = () => {
   const [ref, inView] = useInView({
@@ -12,7 +13,7 @@ const LocationSection = () => {
   });
 
   // Updated coordinates for Дейвид - тенекиджийски услуги
-  const center = { lat: 44.1131063, lng: 27.2555687 }; // Coordinates for Дейвид - тенекиджийски услуги in Силистра, Bulgaria
+  const center = { lat: 44.1131063, lng: 27.2555687 };
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "",  // In a real implementation, you would provide your API key
@@ -108,11 +109,6 @@ const LocationSection = () => {
       </div>
     </section>
   );
-
-  // Need to fix this component by adding the missing Logo import
 };
-
-// Adding the Logo component directly in the file to fix the reference
-import Logo from "./Logo";
 
 export default LocationSection;
