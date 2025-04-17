@@ -66,7 +66,7 @@ const Navbar = () => {
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-2">
           <img 
-            src="/lovable-uploads/e961c05e-d23b-49c1-b978-b1a9b1357f79.png"
+            src="/logo.png"
             alt="Дейвид Груп Logo" 
             className="h-14 w-auto"
           />
@@ -81,14 +81,14 @@ const Navbar = () => {
               className={cn(
                 "relative px-1 py-2 text-sm font-medium transition-colors",
                 activeSection === item.section
-                  ? "text-david-navy"
-                  : "text-david-navy/70 hover:text-david-navy"
+                  ? scrolled ? "text-david-navy" : "text-white" 
+                  : scrolled ? "text-david-navy/70 hover:text-david-navy" : "text-white/80 hover:text-white"
               )}
             >
               {item.label}
               {activeSection === item.section && (
                 <motion.div
-                  className="absolute bottom-0 left-0 h-0.5 w-full bg-david-navy rounded-full"
+                  className={`absolute bottom-0 left-0 h-0.5 w-full ${scrolled ? "bg-david-navy" : "bg-white"} rounded-full`}
                   layoutId="navbar-indicator"
                 />
               )}
@@ -97,7 +97,7 @@ const Navbar = () => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-david-navy">
+        <button className={`md:hidden ${scrolled ? "text-david-navy" : "text-white"}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -117,7 +117,7 @@ const Navbar = () => {
         {/* Contact Button */}
         <button 
           onClick={() => scrollToSection("contact")}
-          className="hidden md:flex glassmorphism px-5 py-2 rounded-full text-sm font-medium text-david-navy hover:shadow-lg transition-all duration-300"
+          className="hidden md:flex glassmorphism px-5 py-2 rounded-full text-sm font-medium text-white hover:bg-white/20 hover:shadow-lg transition-all duration-300"
         >
           Свържи се с нас
         </button>

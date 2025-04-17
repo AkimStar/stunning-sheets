@@ -3,6 +3,16 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      window.scrollTo({
+        top: contactSection.offsetTop - 80,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section id="hero" className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Video background */}
@@ -13,9 +23,9 @@ const HeroSection = () => {
           loop
           playsInline
           className="object-cover w-full h-full"
-          poster="https://images.unsplash.com/photo-1580901369227-308f6f40bdeb?q=80&w=2070&auto=format&fit=crop"
+          poster="https://images.unsplash.com/photo-1574607383476-f517128355fc?q=80&w=2000&auto=format&fit=crop"
         >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-welder-working-on-metal-1712-large.mp4" type="video/mp4" />
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-person-soldering-metal-parts-with-sparks-6370-large.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* Overlay */}
@@ -57,10 +67,13 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <a href="#contact" className="glassmorphism inline-flex items-center px-8 py-3 rounded-full text-white hover:bg-white/20 transition-all duration-300 group">
+            <button 
+              onClick={scrollToContact}
+              className="glassmorphism inline-flex items-center px-8 py-3 rounded-full text-white hover:bg-white/20 transition-all duration-300 group"
+            >
               <span className="mr-2">Свържи се с нас</span>
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            </button>
           </motion.div>
         </motion.div>
       </div>

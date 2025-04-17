@@ -31,6 +31,7 @@ const MaterialCard: React.FC<MaterialCardProps> = ({ imageSrc, title, delay }) =
             src={imageSrc} 
             alt={title}
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
+            loading="lazy"
           />
         </div>
         <div className="p-4">
@@ -67,30 +68,31 @@ const MaterialsProducts = () => {
     }
   }, [emblaApi]);
 
+  // Updated with relevant images for sheet metal products and roofing
   const materials = [
     {
       title: "Поцинкована ламарина",
-      imageSrc: "https://images.unsplash.com/photo-1535813547-46d1b2c76269?q=80&w=1854&auto=format&fit=crop",
+      imageSrc: "https://images.unsplash.com/photo-1605004670071-b258ef2b179c?q=80&w=1856&auto=format&fit=crop",
       delay: 0,
     },
     {
       title: "Шапки за комини",
-      imageSrc: "https://images.unsplash.com/photo-1617850687395-620757feb833?q=80&w=1935&auto=format&fit=crop",
+      imageSrc: "https://images.unsplash.com/photo-1635424710928-0544e8512eae?q=80&w=2000&auto=format&fit=crop",
       delay: 1,
     },
     {
       title: "Покривни тръби и улуци",
-      imageSrc: "https://images.unsplash.com/photo-1594103057001-34cf3de5504b?q=80&w=2037&auto=format&fit=crop",
+      imageSrc: "https://images.unsplash.com/photo-1570044389283-6713c3c474f0?q=80&w=2000&auto=format&fit=crop",
       delay: 2,
     },
     {
       title: "Неръждаема стомана",
-      imageSrc: "https://images.unsplash.com/photo-1605004670071-b258ef2b179c?q=80&w=1856&auto=format&fit=crop",
+      imageSrc: "https://images.unsplash.com/photo-1553908839-d4f1cb6c8bd4?q=80&w=2000&auto=format&fit=crop",
       delay: 3,
     },
     {
       title: "Прахово боядисани повърхности",
-      imageSrc: "https://images.unsplash.com/photo-1517516758156-dd1110b1c4a5?q=80&w=2070&auto=format&fit=crop",
+      imageSrc: "https://images.unsplash.com/photo-1632441730372-d8607678d52e?q=80&w=2000&auto=format&fit=crop",
       delay: 4,
     },
   ];

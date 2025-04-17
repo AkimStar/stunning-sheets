@@ -12,8 +12,9 @@ const Footer = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="mb-6 md:mb-0"
+            className="mb-6 md:mb-0 flex items-center gap-3"
           >
+            <img src="/logo.svg" alt="David Group Logo" className="h-10 w-auto" />
             <p className="text-white/80">
               Copyright © {currentYear} David Group
             </p>
@@ -30,6 +31,9 @@ const Footer = () => {
             </a>
             <a href="#services" className="text-white/80 hover:text-white transition-colors">
               Услуги
+            </a>
+            <a href="#about" className="text-white/80 hover:text-white transition-colors">
+              За нас
             </a>
             <a href="#contact" className="text-white/80 hover:text-white transition-colors">
               Контакти

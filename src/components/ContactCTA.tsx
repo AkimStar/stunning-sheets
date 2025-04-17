@@ -48,16 +48,14 @@ const ContactCTA = () => {
             </motion.a>
           </div>
 
-          <motion.a
-            href="tel:0897634069"
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="mt-12 glassmorphism px-8 py-4 rounded-full inline-flex items-center justify-center hover:bg-white/20 transition-all duration-300 text-white font-medium"
+            className="mt-12 text-white/90 text-lg italic"
           >
-            <span className="mr-2">Обади се сега</span>
-            <Phone className="h-5 w-5" />
-          </motion.a>
+            Работим с прецизност и внимание към детайла – кажете ни от какво имате нужда.
+          </motion.p>
         </motion.div>
       </div>
     </section>
