@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import "@fontsource/plus-jakarta-sans/400.css";
 import "@fontsource/plus-jakarta-sans/500.css";
@@ -33,7 +32,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen">
       <Navbar />
       <HeroSection />
       <ServicesGrid />

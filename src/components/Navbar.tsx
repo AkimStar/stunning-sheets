@@ -1,12 +1,13 @@
-
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
+import { createPortal } from "react-dom";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("hero");
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Handle scroll events
   useEffect(() => {
@@ -64,6 +65,49 @@ const Navbar = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
+      {/* Mobile Menu Overlay - moved to Portal */}
+      {mobileMenuOpen && typeof window !== 'undefined' && createPortal(
+        <div className="fixed inset-0 z-50 bg-white/80 backdrop-blur-md flex flex-col md:hidden animate-fade-in">
+          <div className="flex items-center justify-between p-4">
+            <div className="bg-white rounded-full p-2 shadow-md">
+              <Logo />
+            </div>
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="Close menu"
+              className="text-david-navy p-2 rounded focus:outline-none focus:ring-2 focus:ring-david-accent1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <nav className="flex flex-col items-center gap-6 mt-8">
+            {navItems.map((item) => (
+              <button
+                key={item.section}
+                onClick={() => {
+                  scrollToSection(item.section);
+                  setMobileMenuOpen(false);
+                }}
+                className="text-david-navy text-lg font-medium"
+              >
+                {item.label}
+              </button>
+            ))}
+            <button
+              onClick={() => {
+                scrollToSection("contact");
+                setMobileMenuOpen(false);
+              }}
+              className="mt-8 px-6 py-3 rounded-full bg-david-navy text-white text-base font-medium shadow-lg"
+            >
+              Свържи се с нас
+            </button>
+          </nav>
+        </div>,
+        document.body
+      )}
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-2">
@@ -95,7 +139,11 @@ const Navbar = () => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button className={`md:hidden ${scrolled ? "text-david-navy" : "text-white"}`}>
+        <button 
+          className={`md:hidden ${scrolled ? "text-david-navy" : "text-white"}`}
+          onClick={() => setMobileMenuOpen(true)}
+          aria-label="Open menu"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

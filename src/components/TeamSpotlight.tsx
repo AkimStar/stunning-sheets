@@ -55,25 +55,25 @@ const TeamSpotlight = () => {
     {
       name: "Разим Яшар",
       position: "Специалист",
-      imageSrc: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop",
+      imageSrc: "https://i.ibb.co/0VmKk8xh/rzm1.jpg",
       delay: 0,
     },
     {
       name: "Елмас Яшар",
       position: "Специалист",
-      imageSrc: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
+      imageSrc: "https://i.ibb.co/Q7Z6LC9Y/ylmz1.jpg",
       delay: 1,
     },
     {
       name: "Ресен Сали",
       position: "Майстор тенекеджия",
-      imageSrc: "https://images.unsplash.com/photo-1531891570158-e71b35a485bc?q=80&w=1964&auto=format&fit=crop",
+      imageSrc: "https://i.ibb.co/GwJ8GWK/Chat-GPT-Image-Apr-17-2025-02-46-39-PM-ins.jpg",
       delay: 2,
     },
     {
       name: "Ерай Сали",
       position: "Инспектор качество",
-      imageSrc: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop",
+      imageSrc: "https://i.ibb.co/5XgBSMNb/eray1.jpg",
       delay: 3,
     },
   ];

@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -23,10 +22,10 @@ const MaterialCard: React.FC<MaterialCardProps> = ({ imageSrc, title, delay }) =
       initial={{ opacity: 0, scale: 0.95 }}
       animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.5, delay: delay * 0.1 }}
-      className="flex-shrink-0 w-64 mx-4"
+      className="flex-shrink-0 w-64 mx-4 md:w-52 md:mx-4"
     >
-      <div className="neumorphic overflow-hidden h-full">
-        <div className="h-48 overflow-hidden">
+      <div className="bg-white neumorphic overflow-hidden h-full">
+        <div className="h-48 md:h-40 overflow-hidden">
           <img 
             src={imageSrc} 
             alt={title}
@@ -55,14 +54,14 @@ const MaterialsProducts = () => {
     threshold: 0.1,
   });
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start', dragFree: true });
 
   useEffect(() => {
     if (emblaApi) {
       // Autoplay functionality
       const autoplay = setInterval(() => {
         emblaApi.scrollNext();
-      }, 3000);
+      }, 1500);
 
       return () => clearInterval(autoplay);
     }
@@ -72,27 +71,27 @@ const MaterialsProducts = () => {
   const materials = [
     {
       title: "Поцинкована ламарина",
-      imageSrc: "https://images.unsplash.com/photo-1591972837276-bed99b7a1566?q=80&w=2000&auto=format&fit=crop",
+      imageSrc: "https://i.ibb.co/1pYCF77/Chat-GPT-Image-Apr-17-2025-02-11-20-PM-copy.png",
       delay: 0,
     },
     {
       title: "Шапки за комини",
-      imageSrc: "https://images.unsplash.com/photo-1635424710928-0544e8512eae?q=80&w=2000&auto=format&fit=crop",
+      imageSrc: "https://i.ibb.co/cSw6X0hp/Chat-GPT-Image-Apr-17-2025-02-19-46-PM.png",
       delay: 1,
     },
     {
       title: "Покривни тръби и улуци",
-      imageSrc: "https://images.unsplash.com/photo-1570044389283-6713c3c474f0?q=80&w=2000&auto=format&fit=crop",
+      imageSrc: "https://i.ibb.co/xt8F8MzP/Chat-GPT-Image-Apr-17-2025-02-28-06-PM.png",
       delay: 2,
     },
     {
       title: "Неръждаема стомана",
-      imageSrc: "https://images.unsplash.com/photo-1570358934836-6802981e481e?q=80&w=2000&auto=format&fit=crop",
+      imageSrc: "https://i.ibb.co/1tnTNGkR/Chat-GPT-Image-Apr-17-2025-02-34-29-PM.png",
       delay: 3,
     },
     {
       title: "Прахово боядисани повърхности",
-      imageSrc: "https://images.unsplash.com/photo-1583465701507-8fec0bca8826?q=80&w=2000&auto=format&fit=crop",
+      imageSrc: "https://i.ibb.co/Mx9s8Qsk/Chat-GPT-Image-Apr-17-2025-02-41-01-PM.png",
       delay: 4,
     },
   ];
@@ -127,32 +126,49 @@ const MaterialsProducts = () => {
             ))}
           </div>
         </div>
-
-        {/* Carousel */}
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex py-4">
+      </div>
+      
+      {/* Mobile carousel: only visible on mobile */}
+      <div className="block md:hidden mx-auto pb-4" style={{ maxWidth: '100vw' }}>
+        <div ref={emblaRef}>
+          <div className="flex">
             {materials.map((material, index) => (
-              <MaterialCard
-                key={index}
-                imageSrc={material.imageSrc}
-                title={material.title}
-                delay={material.delay}
-              />
+              <div key={index} className="flex-shrink-0 w-full pl-4 pr-4">
+                <div className="bg-white neumorphic overflow-hidden h-full">
+                  <div className="h-48 overflow-hidden">
+                    <img 
+                      src={material.imageSrc} 
+                      alt={material.title}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-lg font-semibold">{material.title}</h3>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
-        
-        <div className="flex justify-center mt-8">
-          <div className="flex space-x-2">
-            {materials.map((_, index) => (
-              <button
-                key={index}
-                className="w-2 h-2 rounded-full bg-david-accent1/30 hover:bg-david-accent1 transition-colors duration-300"
-                onClick={() => emblaApi?.scrollTo(index)}
-              />
-            ))}
+      </div>
+      {/* Desktop row: only visible on md+ */}
+      <div className="hidden md:flex justify-center gap-8 pb-4">
+        {materials.map((material, index) => (
+          <div key={index} className="flex-shrink-0 w-52">
+            <div className="bg-white neumorphic overflow-hidden h-full">
+              <div className="h-40 overflow-hidden">
+                <img 
+                  src={material.imageSrc} 
+                  alt={material.title}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold">{material.title}</h3>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );
