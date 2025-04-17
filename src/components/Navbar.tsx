@@ -41,6 +41,7 @@ const Navbar = () => {
     { label: "Материали", section: "materials" },
     { label: "Екип", section: "team" },
     { label: "Контакти", section: "contact" },
+    { label: "Локация", section: "location" },
   ];
 
   const scrollToSection = (section: string) => {
@@ -114,7 +115,12 @@ const Navbar = () => {
         {/* Contact Button */}
         <button 
           onClick={() => scrollToSection("contact")}
-          className="hidden md:flex bg-david-navy/80 px-5 py-2 rounded-full text-sm font-medium text-white hover:bg-david-navy hover:shadow-lg transition-all duration-300"
+          className={cn(
+            "hidden md:flex px-5 py-2 rounded-full text-sm font-medium text-white transition-all duration-300",
+            scrolled 
+              ? "bg-david-navy hover:bg-david-navy/90 hover:shadow-lg" 
+              : "bg-david-navy/80 hover:bg-david-navy hover:shadow-lg"
+          )}
         >
           Свържи се с нас
         </button>

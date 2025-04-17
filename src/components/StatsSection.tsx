@@ -55,8 +55,8 @@ const StatsSection = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-david-navy/90 z-10"></div>
         <img
-          src="https://images.unsplash.com/photo-1605870445919-838d190e8e1b?q=80&w=2000&auto=format&fit=crop"
-          alt="Metal worker welding"
+          src="/lovable-uploads/583421d1-1cf7-48cc-bef4-371b25f92a9b.png"
+          alt="Roof screws closeup"
           className="w-full h-full object-cover"
         />
       </div>

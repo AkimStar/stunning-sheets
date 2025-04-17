@@ -15,21 +15,14 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* Video background */}
+      {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="object-cover w-full h-full"
-          poster="https://images.unsplash.com/photo-1551651653-c5186a1fbba2?q=80&w=2000&auto=format&fit=crop"
-        >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-welder-at-work-on-a-metal-rod-23694-large.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-david-navy/80 to-black/40 z-10"></div>
+        <img
+          src="/lovable-uploads/f92b8a91-e1ac-4618-8308-6a75f5b6620c.png"
+          alt="Worker installing metal roof"
+          className="object-cover w-full h-full"
+        />
       </div>
 
       {/* Content */}
