@@ -52,6 +52,15 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Custom colors for David Group
+				david: {
+					background: '#c5d5ea',
+					accent1: '#759eb8',
+					accent2: '#7392b7',
+					accent3: '#b3c5d7',
+					accent4: '#d8e1e9',
+					navy: '#3c4a5d',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +93,73 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0'
+					},
+					'100%': {
+						opacity: '1'
+					}
+				},
+				'count-up': {
+					'0%': {
+						transform: 'translateY(100%)'
+					},
+					'100%': {
+						transform: 'translateY(0)'
+					}
+				},
+				'zoom-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'scale(0.95)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'pulse-soft': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.8'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in-up': 'fade-in-up 0.6s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'count-up': 'count-up 1s ease-out forwards',
+				'zoom-in': 'zoom-in 0.5s ease-out',
+				'float': 'float 3s ease-in-out infinite',
+				'pulse-soft': 'pulse-soft 3s infinite'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'glass': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
 			}
 		}
 	},
