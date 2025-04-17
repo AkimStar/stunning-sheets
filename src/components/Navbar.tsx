@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("hero");
@@ -65,11 +66,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-2">
-          <img 
-            src="/logo.png"
-            alt="Дейвид Груп Logo" 
-            className="h-14 w-auto"
-          />
+          <Logo />
         </a>
 
         {/* Desktop Navigation */}
@@ -117,7 +114,7 @@ const Navbar = () => {
         {/* Contact Button */}
         <button 
           onClick={() => scrollToSection("contact")}
-          className="hidden md:flex glassmorphism px-5 py-2 rounded-full text-sm font-medium text-white hover:bg-white/20 hover:shadow-lg transition-all duration-300"
+          className="hidden md:flex bg-david-navy/80 px-5 py-2 rounded-full text-sm font-medium text-white hover:bg-david-navy hover:shadow-lg transition-all duration-300"
         >
           Свържи се с нас
         </button>

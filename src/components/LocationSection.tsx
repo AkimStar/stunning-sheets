@@ -11,9 +11,8 @@ const LocationSection = () => {
     threshold: 0.1,
   });
 
-  // Mock implementation for the map
-  const mapRef = useRef(null);
-  const center = { lat: 44.1167, lng: 27.2667 }; // Coordinates for Silistra, Bulgaria
+  // Updated coordinates for Дейвид - тенекиджийски услуги
+  const center = { lat: 44.1131063, lng: 27.2555687 }; // Coordinates for Дейвид - тенекиджийски услуги in Силистра, Bulgaria
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "",  // In a real implementation, you would provide your API key
@@ -45,8 +44,8 @@ const LocationSection = () => {
             {/* For demo purposes, since we can't provide a real API key */}
             <div className="w-full h-full bg-david-accent4/50 relative flex items-center justify-center">
               <img 
-                src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/27.2667,44.1167,13,0/600x400?access_token=pk.dummy"
-                alt="Map of Silistra"
+                src={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/${center.lng},${center.lat},15,0/600x400?access_token=pk.dummy`}
+                alt="Map of Силистра"
                 className="w-full h-full object-cover opacity-50"
               />
               <div className="absolute inset-0 flex items-center justify-center flex-col">
@@ -54,11 +53,7 @@ const LocationSection = () => {
                 <p className="text-david-navy/70 text-sm">Гр. Силистра бул. Македония №19</p>
               </div>
               <div className="absolute top-4 right-4">
-                <img 
-                  src="/lovable-uploads/e961c05e-d23b-49c1-b978-b1a9b1357f79.png"
-                  alt="David Group Logo"
-                  className="h-12 w-auto"
-                />
+                <Logo />
               </div>
             </div>
           </motion.div>
@@ -113,6 +108,11 @@ const LocationSection = () => {
       </div>
     </section>
   );
+
+  // Need to fix this component by adding the missing Logo import
 };
+
+// Adding the Logo component directly in the file to fix the reference
+import Logo from "./Logo";
 
 export default LocationSection;

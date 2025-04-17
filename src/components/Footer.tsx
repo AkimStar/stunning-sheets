@@ -3,6 +3,16 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 80,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <footer className="bg-david-navy text-white py-8">
@@ -14,9 +24,9 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             className="mb-6 md:mb-0 flex items-center gap-3"
           >
-            <img src="/logo.svg" alt="David Group Logo" className="h-10 w-auto" />
+            <img src="/logo.svg" alt="Дейвид Груп Logo" className="h-10 w-auto" />
             <p className="text-white/80">
-              Copyright © {currentYear} David Group
+              Copyright © {currentYear} Дейвид Груп
             </p>
           </motion.div>
 
@@ -24,20 +34,50 @@ const Footer = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex gap-6"
+            className="flex flex-wrap justify-center gap-4 md:gap-6"
           >
-            <a href="#hero" className="text-white/80 hover:text-white transition-colors">
+            <button 
+              onClick={() => scrollToSection('hero')} 
+              className="text-white/80 hover:text-white transition-colors"
+            >
               Начало
-            </a>
-            <a href="#services" className="text-white/80 hover:text-white transition-colors">
+            </button>
+            <button 
+              onClick={() => scrollToSection('services')} 
+              className="text-white/80 hover:text-white transition-colors"
+            >
               Услуги
-            </a>
-            <a href="#about" className="text-white/80 hover:text-white transition-colors">
+            </button>
+            <button 
+              onClick={() => scrollToSection('about')} 
+              className="text-white/80 hover:text-white transition-colors"
+            >
               За нас
-            </a>
-            <a href="#contact" className="text-white/80 hover:text-white transition-colors">
+            </button>
+            <button 
+              onClick={() => scrollToSection('materials')} 
+              className="text-white/80 hover:text-white transition-colors"
+            >
+              Материали
+            </button>
+            <button 
+              onClick={() => scrollToSection('team')} 
+              className="text-white/80 hover:text-white transition-colors"
+            >
+              Екип
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')} 
+              className="text-white/80 hover:text-white transition-colors"
+            >
               Контакти
-            </a>
+            </button>
+            <button 
+              onClick={() => scrollToSection('location')} 
+              className="text-white/80 hover:text-white transition-colors"
+            >
+              Локация
+            </button>
           </motion.nav>
         </div>
       </div>
